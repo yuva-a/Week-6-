@@ -4,7 +4,7 @@ CHIP add
     OUT s[9];
 
     PARTS:
-// to set up for add or subtract
+// hello shit
     And(a=false,b=false,out=as);
     And(a=as,b=as,out=c0);
     Xor(a=y[0],b=as,out=y0);
