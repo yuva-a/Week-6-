@@ -1,0 +1,18 @@
+CHIP sevenbitxor
+{
+    IN S[9];
+    OUT s[9];
+
+    PARTS:
+    
+    Xor(a=S[7], b=true, out=s[7]);
+    And(a=S[0],b=S[0],out=s[0]);
+    And(a=S[1],b=S[1],out=s[1]);
+    And(a=S[2],b=S[2],out=s[2]);
+    And(a=S[3],b=S[3],out=s[3]);
+    And(a=S[4],b=S[4],out=s[4]);
+    And(a=S[5],b=S[5],out=s[5]);
+    And(a=S[6],b=S[6],out=s[6]);
+    And(a=S[8],b=S[8],out=s[8]);
+
+}
