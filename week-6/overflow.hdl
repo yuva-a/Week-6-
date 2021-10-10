@@ -1,0 +1,39 @@
+CHIP overflow
+{
+    IN s[8],x,y;
+    OUT out;
+
+    PARTS:
+    Or(a=s[0],b=s[1],out=o0);
+    Or(a=s[2],b=o0,out=o1);
+    Or(a=s[3],b=o1,out=o2);
+    Or(a=s[4],b=o2,out=o3);
+    Or(a=s[5],b=o3,out=o4);
+    Or(a=s[6],b=o4,out=o5);
+
+    Not(in=s[0],out=ns0);
+    Not(in=s[1],out=ns1);
+    Not(in=s[2],out=ns2);
+    Not(in=s[3],out=ns3);
+    Not(in=s[4],out=ns4);
+    Not(in=s[5],out=ns5);
+    Not(in=s[6],out=ns6);
+    Not(in=s[7],out=ns7);
+
+    Or(a=ns0,b=ns1,out=no0);
+    Or(a=ns2,b=no0,out=no1);
+    Or(a=ns3,b=no1,out=no2);
+    Or(a=ns4,b=no2,out=no3);
+    Or(a=ns5,b=no3,out=no4);
+    Or(a=ns6,b=no4,out=no5);
+    
+    Xor(a=x,b=y,out=f0);
+    Xor(a=x,b=y,out=nf1);
+    Not(in=nf1,out=f1);
+
+    And(a=o5,b=f1,out=out1);
+    And(a=no5,b=f0,out=out2);
+
+    Or(a=out1,b=out2,out=out);
+
+}

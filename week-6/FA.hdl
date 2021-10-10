@@ -1,0 +1,41 @@
+CHIP FA
+{
+    IN a[16],b[16],c[16];
+    OUT sum[16],carry[16];
+
+    PARTS:
+    
+    fun(x=a[0],y=b[0],z=c[0],out=sum[0]);
+    fun(x=a[1],y=b[1],z=c[1],out=sum[1]);
+    fun(x=a[2],y=b[2],z=c[2],out=sum[2]);
+    fun(x=a[3],y=b[3],z=c[3],out=sum[3]);
+    fun(x=a[4],y=b[4],z=c[4],out=sum[4]);
+    fun(x=a[5],y=b[5],z=c[5],out=sum[5]);
+    fun(x=a[6],y=b[6],z=c[6],out=sum[6]);
+    fun(x=a[7],y=b[7],z=c[7],out=sum[7]);
+    fun(x=a[8],y=b[8],z=c[8],out=sum[8]);
+    fun(x=a[9],y=b[9],z=c[9],out=sum[9]);
+    fun(x=a[10],y=b[10],z=c[10],out=sum[10]);
+    fun(x=a[11],y=b[11],z=c[11],out=sum[11]);
+    fun(x=a[12],y=b[12],z=c[12],out=sum[12]);
+    fun(x=a[13],y=b[13],z=c[13],out=sum[13]);
+    fun(x=a[14],y=b[14],z=c[14],out=sum[14]);
+    fun(x=a[15],y=b[15],z=c[15],out=sum[15]);  
+
+    And(a=false,b=false,out=carry[0]);
+    got(x=a[0],y=b[0],z=c[0],out=carry[1]);
+    got(x=a[1],y=b[1],z=c[1],out=carry[2]);
+    got(x=a[2],y=b[2],z=c[2],out=carry[3]);
+    got(x=a[3],y=b[3],z=c[3],out=carry[4]);
+    got(x=a[4],y=b[4],z=c[4],out=carry[5]);
+    got(x=a[5],y=b[5],z=c[5],out=carry[6]);
+    got(x=a[6],y=b[6],z=c[6],out=carry[7]);
+    got(x=a[7],y=b[7],z=c[7],out=carry[8]);
+    got(x=a[8],y=b[8],z=c[8],out=carry[9]);
+    got(x=a[9],y=b[9],z=c[9],out=carry[10]);
+    got(x=a[10],y=b[10],z=c[10],out=carry[11]);
+    got(x=a[11],y=b[11],z=c[11],out=carry[12]);
+    got(x=a[12],y=b[12],z=c[12],out=carry[13]);
+    got(x=a[13],y=b[13],z=c[13],out=carry[14]);
+    got(x=a[14],y=b[14],z=c[14],out=carry[15]);
+}

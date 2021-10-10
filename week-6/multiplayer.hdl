@@ -1,0 +1,29 @@
+CHIP multiplayer
+{
+    IN x[8],y[8];
+    OUT out[16];
+
+    PARTS:
+    
+    PP0(P=y,p=x[0],out=pp0);
+    PP1(P=y,p=x[1],out=pp1);
+    PP2(P=y,p=x[2],out=pp2);
+    PP3(P=y,p=x[3],out=pp3);
+    PP4(P=y,p=x[4],out=pp4);
+    PP5(P=y,p=x[5],out=pp5);
+    PP6(P=y,p=x[6],out=pp6);
+    PP7(P=y,p=x[7],out=pp7);
+
+    FA(a=pp0, b=pp1, c=pp2, sum=s10, carry=c10);
+    FA(a=pp3, b=pp4, c=pp5, sum=s11, carry=c11);
+    
+    FA(a=s10, b=c10, c=s11, sum=s20, carry=c20);
+    FA(a=c11, b=pp6, c=pp7, sum=s21, carry=c21);
+
+    FA(a=s20, b=c20, c=s21, sum=s30, carry=c30);
+
+    FA(a=s30, b=c30, c=c21, sum=s40, carry=c40);
+
+    me(x=s40,y=c40,s[0]=out[0],s[1]=out[1],s[2]=out[2],s[3]=out[3],s[4]=out[4],s[5]=out[5],s[6]=out[6],s[7]=out7,s[8]=out8,s[9]=out9,s[10]=out10,s[11]=out11,s[12]=out12,s[13]=out13,s[14]=out14,s[15]=out15);
+
+}

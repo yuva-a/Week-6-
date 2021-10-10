@@ -1,0 +1,65 @@
+CHIP main
+{
+    IN x[16],y[16];
+    OUT out[16],OF;
+
+    PARTS:
+    
+    //sign
+    Xor(a=x[0],b=y[0],out=out[0]);
+
+//Product of matissa
+    multiplayer(x[0]=x[9],x[1]=x[10],x[2]=x[11],x[3]=x[12],x[4]=x[13],x[5]=x[14],x[6]=x[15],x[7]=true,y[0]=y[9],y[1]=y[10],y[2]=y[11],y[3]=y[12],y[4]=y[13],y[5]=y[14],y[6]=y[15],y[7]=ture,out=mantiout);
+    And(a=mantiout[0],b=mantiout[0],out=opp);
+    Not(in=opp,out=nopp);
+
+// normalizing or 2 to 1 mux in this case
+    And(a=mantiout[15],b=opp,out=1manti0);
+    And(a=mantiout[14],b=nopp,out=2manti0);
+    Or(a=1manti0,b=2manti0,out=out[9]);
+    
+    And(a=mantiout[14],b=opp,out=1manti1);
+    And(a=mantiout[13],b=nopp,out=2manti1);
+    Or(a=1manti1,b=2manti1,out=out[10]);
+    
+    And(a=mantiout[13],b=opp,out=1manti2);
+    And(a=mantiout[12],b=nopp,out=2manti2);
+    Or(a=1manti2,b=2manti2,out=out[11]);
+    
+    And(a=mantiout[12],b=opp,out=1manti3);
+    And(a=mantiout[11],b=nopp,out=2manti3);
+    Or(a=1manti3,b=2manti3,out=out[12]);
+    
+    And(a=mantiout[11],b=opp,out=1manti4);
+    And(a=mantiout[10],b=nopp,out=2manti4);
+    Or(a=1manti4,b=2manti4,out=out[13]);
+    
+    And(a=mantiout[10],b=opp,out=1manti5);
+    And(a=mantiout[9],b=nopp,out=2manti5);
+    Or(a=1manti5,b=2manti5,out=out[14]);
+    
+    And(a=mantiout[9],b=opp,out=1manti6);
+    And(a=mantiout[8],b=nopp,out=2manti6);
+    Or(a=1manti6,b=2manti6,out=out[15]);
+    
+    And(a=mantiout[8],b=opp,out=1manti7);
+    And(a=mantiout[7],b=nopp,out=2manti7);
+    Or(a=1manti7,b=2manti7,out=out[16]);
+//
+
+ //exponent 
+    add(x[0]=x[1],x[1]=x[2],x[2]=x[3],x[3]=x[4],x[4]=x[5],x[5]=x[6],x[6]=x[7],x[7]=x[8],y[0]=y[1],y[1]=y[2],y[2]=y[3],y[3]=y[4],y[4]=y[5],y[5]=y[6],y[6]=y[7],y[7]=y[8],s=s);
+    Xor(a=s[7],b=true,out=s7);
+    add(x[0]=s[0],x[1]=s[1],x[2]=s[2],x[3]=s[3],x[4]=s[4],x[5]=s[5],x[6]=s[6],x[7]=s7,y[0]=true,y[1]=false,y[2]=false,y[3]=false,y[4]=false,y[5]=false,y[6]=false,y[7]=false,s=sf);
+    add(x[0]=sf[0],x[1]=sf[1],x[2]=sf[2],x[3]=sf[3],x[4]=sf[4],x[5]=sf[5],x[6]=sf[6],x[7]=sf[7],y[0]=mantiout[15],y[1]=false,y[2]=false,y[3]=false,y[4]=false,y[5]=false,y[6]=false,y[7]=false,s[0]=out[1],s[1]=out[2],s[2]=out[3],s[3]=out[4],s[4]=out[5],s[5]=out[6],s[6]=out[7],s[7]=out[8],s[8]=sff);
+//
+
+//Overflow
+    And(a=s[8],b=s[7],out=over0);
+    Not(in=s[8],out=ns8);
+    Not(in=s[7],out=ns7);
+    And(a=ns7,b=ns8,out=over1);
+    Or(a=over0,b=over1,out=over2);
+    Or(a=over2,b=sf[8],out=over3);
+    Or(a=sff,b=over3,out=OF);
+}
