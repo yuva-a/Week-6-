@@ -10,14 +10,14 @@ eval,
 output;
 
 set x %B1011111111010000,
-set y %B1011111111100000,
+set y %B1011111111000000,
 eval,
 output;
 
 
 //opposite sign
 set x %B1011111111010000,
-set y %B0011111111100000,
+set y %B0011111111000000,
 eval,
 output;
 
