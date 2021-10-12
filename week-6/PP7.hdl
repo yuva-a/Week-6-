@@ -5,39 +5,20 @@ CHIP PP7
 
     PARTS:
     
-    And(a=false,b=false,out=out0);
-    And(a=false,b=false,out=out1);
-    And(a=false,b=false,out=out2);
-    And(a=false,b=false,out=out3);
-    And(a=false,b=false,out=out4);
-    And(a=false,b=false,out=out5);
-    And(a=false,b=false,out=out6);
-    And(a=P[0],b=p,out=out7);
-    And(a=P[1],b=p,out=out8);
-    And(a=P[2],b=p,out=out9);
-    And(a=P[3],b=p,out=out10);
-    And(a=P[4],b=p,out=out11);
-    And(a=P[5],b=p,out=out12);
-    And(a=P[6],b=p,out=out13);
-    And(a=P[7],b=p,out=out14);
-    And(a=P[7],b=p,out=out15);
-
-    Xor(a=out0,b=p,out=o0);
-    Xor(a=out1,b=p,out=o1);
-    Xor(a=out2,b=p,out=o2);
-    Xor(a=out3,b=p,out=o3);
-    Xor(a=out4,b=p,out=o4);
-    Xor(a=out5,b=p,out=o5);
-    Xor(a=out6,b=p,out=o6);
-    Xor(a=out7,b=p,out=o7);
-    Xor(a=out8,b=p,out=o8);
-    Xor(a=out9,b=p,out=o9);
-    Xor(a=out10,b=p,out=o10);
-    Xor(a=out11,b=p,out=o11);
-    Xor(a=out12,b=p,out=o12);
-    Xor(a=out13,b=p,out=o13);
-    Xor(a=out14,b=p,out=o14);
-    Xor(a=out15,b=p,out=o15);
-    
-    me(x[0]=o0,x[1]=o1,x[2]=o2,x[3]=o3,x[4]=o4,x[5]=o5,x[6]=o6,x[7]=o7,x[8]=o8,x[9]=o9,x[10]=o10,x[11]=o11,x[12]=o12,x[13]=o13,x[14]=o14,x[15]=o15,y[0]=p,y[1]=false,y[2]=false,y[3]=false,y[4]=false,y[5]=false,y[6]=false,y[7]=false,y[8]=false,y[9]=false,y[10]=false,y[11]=false,y[12]=false,y[13]=false,y[14]=false,y[15]=false,s=out);
+    And(a=false,b=false,out=out[0]);
+    And(a=false,b=false,out=out[1]);
+    And(a=false,b=false,out=out[2]);
+    And(a=false,b=false,out=out[3]);
+    And(a=false,b=false,out=out[4]);
+    And(a=false,b=false,out=out[5]);    
+    And(a=false,b=false,out=out[6]);    
+    And(a=P[0],b=p,out=out[7]);
+    And(a=P[1],b=p,out=out[8]);
+    And(a=P[2],b=p,out=out[9]);
+    And(a=P[3],b=p,out=out[10]);
+    And(a=P[4],b=p,out=out[11]);
+    And(a=P[5],b=p,out=out[12]);
+    And(a=P[6],b=p,out=out[13]);
+    And(a=P[7],b=p,out=out[14]);
+    And(a=P[7],b=false,out=out[15]);
 }

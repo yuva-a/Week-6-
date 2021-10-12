@@ -24,6 +24,6 @@ CHIP multiplayer
 
     FA(a=s30, b=c30, c=c21, sum=s40, carry=c40);
 
-    me(x=s40,y=c40,s[0]=out[0],s[1]=out[1],s[2]=out[2],s[3]=out[3],s[4]=out[4],s[5]=out[5],s[6]=out[6],s[7]=out7,s[8]=out8,s[9]=out9,s[10]=out10,s[11]=out11,s[12]=out12,s[13]=out13,s[14]=out14,s[15]=out15);
+    me(x=s40,y=c40,s[0]=out[0],s[1]=out[1],s[2]=out[2],s[3]=out[3],s[4]=out[4],s[5]=out[5],s[6]=out[6],s[7]=out[7],s[8]=out[8],s[9]=out[9],s[10]=out[10],s[11]=out[11],s[12]=out[12],s[13]=out[13],s[14]=out[14],s[15]=out[15]);
 
 }
