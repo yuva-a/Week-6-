@@ -1,63 +1,63 @@
 CHIP main
 {
     IN x[16],y[16];
-    OUT out[16],OF;
+    OUT out[16];
 
     PARTS:
     
     //sign
-    Xor(a=x[0],b=y[0],out=out[0]);
+    Xor(a=x[15],b=y[15],out=out[15]);
 
 //Product of matissa
-    multiplayer(x[0]=x[9],x[1]=x[10],x[2]=x[11],x[3]=x[12],x[4]=x[13],x[5]=x[14],x[6]=x[15],x[7]=true,y[0]=y[9],y[1]=y[10],y[2]=y[11],y[3]=y[12],y[4]=y[13],y[5]=y[14],y[6]=y[15],y[7]=true,out[0]=mantiout0,out[1]=mantiout1,out[2]=mantiout2,out[3]=mantiout3,out[4]=mantiout4,out[5]=mantiout5,out[6]=mantiout6,out[7]=mantiout7,out[8]=mantiout8,out[9]=mantiout9,out[10]=mantiout10,out[11]=mantiout11,out[12]=mantiout12,out[13]=mantiout13,out[14]=mantiout14,out[15]=mantiout15);
+    multiplayer(x[0]=x[0],x[1]=x[1],x[2]=x[2],x[3]=x[3],x[4]=x[4],x[5]=x[5],x[6]=x[6],x[7]=true,y[0]=y[0],y[1]=y[1],y[2]=y[2],y[3]=y[3],y[4]=y[4],y[5]=y[5],y[6]=y[6],y[7]=true,out[0]=mantiout0,out[1]=mantiout1,out[2]=mantiout2,out[3]=mantiout3,out[4]=mantiout4,out[5]=mantiout5,out[6]=mantiout6,out[7]=mantiout7,out[8]=mantiout8,out[9]=mantiout9,out[10]=mantiout10,out[11]=mantiout11,out[12]=mantiout12,out[13]=mantiout13,out[14]=mantiout14,out[15]=mantiout15);
     And(a=mantiout15,b=mantiout15,out=opp);
     Not(in=opp,out=nopp);
 
 // normalizing or 2 to 1 mux in this case
     And(a=mantiout15,b=opp,out=xmanti0);
     And(a=mantiout14,b=nopp,out=ymanti0);
-    Or(a=xmanti0,b=ymanti0,out=out[9]);
+    Or(a=xmanti0,b=ymanti0,out=out[0]);
     
     And(a=mantiout14,b=opp,out=xmanti1);
     And(a=mantiout13,b=nopp,out=ymanti1);
-    Or(a=xmanti1,b=ymanti1,out=out[10]);
+    Or(a=xmanti1,b=ymanti1,out=out[1]);
     
     And(a=mantiout13,b=opp,out=xmanti2);
     And(a=mantiout12,b=nopp,out=ymanti2);
-    Or(a=xmanti2,b=ymanti2,out=out[11]);
+    Or(a=xmanti2,b=ymanti2,out=out[2]);
     
     And(a=mantiout12,b=opp,out=xmanti3);
     And(a=mantiout11,b=nopp,out=ymanti3);
-    Or(a=xmanti3,b=ymanti3,out=out[12]);
+    Or(a=xmanti3,b=ymanti3,out=out[3]);
     
     And(a=mantiout11,b=opp,out=xmanti4);
     And(a=mantiout10,b=nopp,out=ymanti4);
-    Or(a=xmanti4,b=ymanti4,out=out[13]);
+    Or(a=xmanti4,b=ymanti4,out=out[4]);
     
     And(a=mantiout10,b=opp,out=xmanti5);
     And(a=mantiout9,b=nopp,out=ymanti5);
-    Or(a=xmanti5,b=ymanti5,out=out[14]);
+    Or(a=xmanti5,b=ymanti5,out=out[5]);
     
     And(a=mantiout9,b=opp,out=xmanti6);
     And(a=mantiout8,b=nopp,out=ymanti6);
-    Or(a=xmanti6,b=ymanti6,out=out[15]);
+    Or(a=xmanti6,b=ymanti6,out=out[6]);
     
 //
 
  //exponent 
-    add(x[0]=x[1],x[1]=x[2],x[2]=x[3],x[3]=x[4],x[4]=x[5],x[5]=x[6],x[6]=x[7],x[7]=x[8],y[0]=y[1],y[1]=y[2],y[2]=y[3],y[3]=y[4],y[4]=y[5],y[5]=y[6],y[6]=y[7],y[7]=y[8],s=S);
+    add(x[0]=x[7],x[1]=x[8],x[2]=x[9],x[3]=x[10],x[4]=x[11],x[5]=x[12],x[6]=x[13],x[7]=x[14],y[0]=y[7],y[1]=y[8],y[2]=y[9],y[3]=y[10],y[4]=y[11]],y[5]=y[12],y[6]=y[13],y[7]=y[14],s=S);
     sevenbitxor(S=S,s[0]=s0,s[1]=s1,s[2]=s2,s[3]=s3,s[4]=s4,s[5]=s5,s[6]=s6,s[7]=s7,s[8]=s8);
     Xor(a=s7,b=true,out=ss7);
     add(x[0]=s0,x[1]=s1,x[2]=s2,x[3]=s3,x[4]=s4,x[5]=s5,x[6]=s6,x[7]=s7,y[0]=true,y[1]=false,y[2]=false,y[3]=false,y[4]=false,y[5]=false,y[6]=false,y[7]=false,s[0]=sf0,s[1]=sf1,s[2]=sf2,s[3]=sf3,s[4]=sf4,s[5]=sf5,s[6]=sf6,s[7]=sf7,s[8]=sf8);
-    add(x[0]=sf0,x[1]=sf1,x[2]=sf2,x[3]=sf3,x[4]=sf4,x[5]=sf5,x[6]=sf6,x[7]=sf7,y[0]=mantiout15,y[1]=false,y[2]=false,y[3]=false,y[4]=false,y[5]=false,y[6]=false,y[7]=false,s[0]=out[1],s[1]=out[2],s[2]=out[3],s[3]=out[4],s[4]=out[5],s[5]=out[6],s[6]=out[7],s[7]=out[8],s[8]=sff);
+    add(x[0]=sf0,x[1]=sf1,x[2]=sf2,x[3]=sf3,x[4]=sf4,x[5]=sf5,x[6]=sf6,x[7]=sf7,y[0]=mantiout15,y[1]=false,y[2]=false,y[3]=false,y[4]=false,y[5]=false,y[6]=false,y[7]=false,s[0]=out[7],s[1]=out[8],s[2]=out[9],s[3]=out[10],s[4]=out[11],s[5]=out[12],s[6]=out[13],s[7]=out[14],s[8]=sff);
 //
 
 //Overflow
-    And(a=s8,b=ss7,out=over0);
-    Not(in=s8,out=ns8);
-    Not(in=ss7,out=ns7);
-    And(a=ns7,b=ns8,out=over1);
-    Or(a=over0,b=over1,out=over2);
-    Or(a=over2,b=sf8,out=over3);
-    Or(a=sff,b=over3,out=OF);
+    // And(a=s8,b=ss7,out=over0);
+    // Not(in=s8,out=ns8);
+    // Not(in=ss7,out=ns7);
+    // And(a=ns7,b=ns8,out=over1);
+    // Or(a=over0,b=over1,out=over2);
+    // Or(a=over2,b=sf8,out=over3);
+    // Or(a=sff,b=over3,out=OF);
 }
