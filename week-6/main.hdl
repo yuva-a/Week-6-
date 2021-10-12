@@ -14,32 +14,32 @@ CHIP main
     Not(in=opp,out=nopp);
 
 // normalizing or 2 to 1 mux in this case
-    And(a=mantiout15,b=opp,out=xmanti0);
-    And(a=mantiout14,b=nopp,out=ymanti0);
+    And(a=mantiout14,b=opp,out=xmanti0);
+    And(a=mantiout13,b=nopp,out=ymanti0);
     Or(a=xmanti0,b=ymanti0,out=out[6]);
     
-    And(a=mantiout14,b=opp,out=xmanti1);
-    And(a=mantiout13,b=nopp,out=ymanti1);
+    And(a=mantiout13,b=opp,out=xmanti1);
+    And(a=mantiout12,b=nopp,out=ymanti1);
     Or(a=xmanti1,b=ymanti1,out=out[5]);
     
-    And(a=mantiout13,b=opp,out=xmanti2);
-    And(a=mantiout12,b=nopp,out=ymanti2);
+    And(a=mantiout12,b=opp,out=xmanti2);
+    And(a=mantiout11,b=nopp,out=ymanti2);
     Or(a=xmanti2,b=ymanti2,out=out[4]);
     
-    And(a=mantiout12,b=opp,out=xmanti3);
-    And(a=mantiout11,b=nopp,out=ymanti3);
+    And(a=mantiout11,b=opp,out=xmanti3);
+    And(a=mantiout10,b=nopp,out=ymanti3);
     Or(a=xmanti3,b=ymanti3,out=out[3]);
     
-    And(a=mantiout11,b=opp,out=xmanti4);
-    And(a=mantiout10,b=nopp,out=ymanti4);
+    And(a=mantiout10,b=opp,out=xmanti4);
+    And(a=mantiout9,b=nopp,out=ymanti4);
     Or(a=xmanti4,b=ymanti4,out=out[2]);
     
-    And(a=mantiout10,b=opp,out=xmanti5);
-    And(a=mantiout9,b=nopp,out=ymanti5);
+    And(a=mantiout9,b=opp,out=xmanti5);
+    And(a=mantiout8,b=nopp,out=ymanti5);
     Or(a=xmanti5,b=ymanti5,out=out[1]);
     
-    And(a=mantiout9,b=opp,out=xmanti6);
-    And(a=mantiout8,b=nopp,out=ymanti6);
+    And(a=mantiout8,b=opp,out=xmanti6);
+    And(a=mantiout7,b=nopp,out=ymanti6);
     Or(a=xmanti6,b=ymanti6,out=out[0]);
     
 //
