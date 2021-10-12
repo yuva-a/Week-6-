@@ -15,12 +15,12 @@ CHIP PP2
     And(a=P[5],b=p,out=out[7]);
     And(a=P[6],b=p,out=out[8]);
     And(a=P[7],b=p,out=out[9]);
-    And(a=P[7],b=p,out=out[10]);
-    And(a=P[7],b=p,out=out[11]);
-    And(a=P[7],b=p,out=out[12]);
-    And(a=P[7],b=p,out=out[13]);
-    And(a=P[7],b=p,out=out[14]);
-    And(a=P[7],b=p,out=out[15]);
+    And(a=P[7],b=false,out=out[10]);
+    And(a=P[7],b=false,out=out[11]);
+    And(a=P[7],b=false,out=out[12]);
+    And(a=P[7],b=false,out=out[13]);
+    And(a=P[7],b=false,out=out[14]);
+    And(a=P[7],b=false,out=out[15]);
     
 
 }

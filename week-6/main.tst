@@ -1,7 +1,7 @@
 load main.hdl,
 output-file main.out,
 // compare-to main.cmp,
-output-list x%B3.16.3 y%B3.16.3 out%B3.16.3 OF%B3.1.3;
+output-list x%B3.16.3 y%B3.16.3 out%B3.16.3 ;
 
 //same sign
 set x %B0011111110010000,
